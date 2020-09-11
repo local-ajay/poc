@@ -1,0 +1,27 @@
+<nav class="nav-wrapper active">
+    <ul>
+        <li><a (click)="onClickMyBlue()">MyBlue Test Accounts</a></li>
+        <li><a (click)="onClickMSST()">MSST Test Accounts</a></li>
+    </ul>
+    <div class="NavProfile right-align z-depth-0">
+        <a mat-button [matMenuTriggerFor]="beforeMenu">Welcome 
+        {{username}}
+        <mat-icon>arrow_drop_down</mat-icon>
+    </a>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <a mat-menu-item (click)="logout()" class="logout">
+                <mat-icon>exit_to_app</mat-icon>Logout
+            </a>
+        </mat-menu>
+    </div>
+
+</nav>
+<div class="body" *ngIf="!hideWelcome">
+    <div class="">
+        <h1>Welcome to <br><br>Test Account Center</h1>
+    </div>
+</div>
+<router-outlet></router-outlet>
+<div class="footer">
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,35 @@
+//@import 'src/common-style';
+@import 'palette';
+@import 'node_modules/materialize-css/sass/materialize.scss';
+@mixin std-container {
+    position: absolute;
+    left: 20px;
+    padding-top: 20px;
+}
+
+@mixin std-btn {
+    width: 100%;
+    background-color: $primary-blue;
+    margin-bottom: 2em;
+    margin-left: 5px;
+    padding-right: 10px;
+}
+
+@mixin std-table {
+    @extend .highlight;
+    @extend .responsive-table;
+}
+
+@mixin std-pagination {
+    // @extend .center;
+    position: relative;
+    left: 18%;
+    // .my-pagination /deep/ .ngx-pagination .current {
+    //     background: red;
+    // }
+}
+
+@mixin std-select {
+    display: inline-flex;
+    width: fit-content;
+}

@@ -1,0 +1,58 @@
+@import 'src/common-style';
+h1 {
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-bottom: 450px;
+    margin-top: 0%;
+    color: $primary-blue;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $bg-grey;
+    font-family: fantasy;
+}
+
+.body {
+    background-image: url('../../../assets/image/bg-img.jpg');
+    height: 80%;
+    min-height: 80%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+}
+
+.row {
+    float: right;
+}
+
+.nav-wrapper {
+    background-color: $primary-blue;
+    font-weight: 500;
+    min-height: 100%;
+}
+
+.NavProfile {
+    padding-right: 30px;
+}
+
+.logout {
+    color: darken($bg-grey, 30%);
+    mat-icon {
+        color: darken($bg-grey, 30%);
+    }
+}
+
+img {
+    opacity: 50%;
+    width: 100%;
+}
+
+.push {
+    min-height: 60vh;
+    height: 60vh;
+}
+
+.footer {
+    margin-left: -200px;
+    height: auto;
+    width: 90%;
+}

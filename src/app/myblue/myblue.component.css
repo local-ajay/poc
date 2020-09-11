@@ -1,0 +1,11 @@
+.btn-small {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 70px;
+}
+
+h4 {
+  font-weight: 500;
+}
+/*# sourceMappingURL=myblue.component.css.map */

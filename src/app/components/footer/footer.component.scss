@@ -1,0 +1,179 @@
+@import 'src/common-style';
+.footer-body {
+    margin-top: 100px;
+    position: relative;
+    bottom: 0;
+    background-color: $white;
+    left: 20%;
+}
+
+.container {
+    background-color: $white;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    float: right;
+}
+
+.links {
+    margin: auto;
+    display: flex;
+    img {
+        float: left;
+        height: 44px;
+        max-width: 100px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.footer-body2 {
+    font-size: 0.65em;
+    margin-top: 10px;
+    padding-top: 0px;
+    color: #818181;
+    border-top: 1px solid #cccccc;
+    .text {
+        display: block;
+        margin: 0 0 15 200px;
+    }
+    .footer-img {
+        width: 155px;
+        min-width: 155px;
+        margin: 10px;
+    }
+}
+
+.disclaimer {
+    clear: both;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.menu {
+    img {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .disclaimer {
+        border-top: 1px solid #cccccc;
+    }
+    .header {
+        img {
+            max-height: 25px;
+        }
+    }
+    .links {
+        margin: 0;
+        img {
+            max-width: 75px;
+        }
+    }
+    .app-download-links {
+        display: flex;
+        justify-content: space-between;
+    }
+    .hide-on-small-only1 {
+        display: none;
+    }
+}
+
+@media screen and (min-width:769px) {
+    .text {
+        float: left;
+    }
+    .footer-img {
+        float: left;
+    }
+    p {
+        display: inline;
+    }
+    .app-download-links {
+        float: left;
+        display: flex;
+        justify-content: center;
+    }
+    .links {
+        margin: auto;
+        img {
+            max-height: 44px;
+            max-width: 75px;
+        }
+    }
+    .social {
+        margin-left: 10px;
+    }
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        .footer-img {
+            width: 300px;
+            margin: 10px;
+        }
+    }
+    .v-align {
+        margin-left: 30px;
+    }
+    .hide-on-med-and-up1 {
+        display: none;
+    }
+}
+
+
+/* Style all font awesome icons */
+
+.fa {
+    padding: 5px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 5px;
+    background-size: contain;
+}
+
+
+/* Add a hover effect if you want */
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+
+/* Set a specific color for each brand */
+
+
+/* Facebook */
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+
+/* Twitter */
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-youtube {
+    background: #d82532;
+    color: white;
+}

@@ -1,0 +1,49 @@
+<h4>Production Environment</h4>
+
+<div class="row">
+    <div class="col s6 m3">
+        <div class="btn-small" (click)="onClick()" matTooltip="Click here to open link in new tab">MyBlue Production Url</div>
+    </div>
+    <div class="col s6 m3">
+        <div class="btn-small waves-effect waves-light sample" (click)="onClickSample()">
+            <div *ngIf="hideSampleData;else elseBlock">
+                <!-- <i class="material-icons right" style="position: relative;top: 2px;">add</i>  -->
+                {{sampleBtn}}
+            </div>
+            <ng-template #elseBlock>
+                <!-- <i class="material-icons right" style="position: relative;top: 2px;">remove</i>  -->
+                {{sampleBtn}}
+            </ng-template>
+        </div>
+    </div>
+    <div class="col s12 m3">
+        <div class="btn-small waves-effect waves-light" matTooltip="Click here add the Data" (click)="openDialog()">Add Test Accounts</div>
+    </div>
+</div>
+
+<div [hidden]="hideSampleData">
+    <table class="sampleTable" *ngIf="importedCreds.length!=0">
+        <thead>
+            <tr>
+                <th class="reduce-padding-serial-number">Sr No</th>
+                <th>Username</th>
+                <th>Feature</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of importedCreds">
+                <td class="reduce-padding-serial-number">{{user.srno}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.feature}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="importedCreds.length==0">
+        <h6>
+            No test accounts are available.
+            <a href="javascript:;" (click)="openDialog()"> 
+                Click here to add the test accounts.
+            </a>
+        </h6>
+    </div>
+</div>

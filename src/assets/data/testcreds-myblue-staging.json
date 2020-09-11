@@ -1,0 +1,25 @@
+[{
+        "id": 1,
+        "username": "test",
+        "password": "mybluepassstaging",
+        "field": "A"
+    },
+    {
+        "id": 3,
+        "username": "test2",
+        "password": "mybluepassstaging2",
+        "field": "B"
+    },
+    {
+        "id": 3,
+        "username": "test3",
+        "password": "mybluepassstaging3",
+        "field": "C"
+    },
+    {
+        "id": 4,
+        "username": "test4",
+        "password": "mybluepassstaging4",
+        "field": "D"
+    }
+]

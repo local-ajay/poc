@@ -1,0 +1,25 @@
+<div class="container" style="width: 700px;height: 350px;">
+    <div class="container " style="position: relative; top: 25px;">
+        <h2 class="left">Log in to your portal</h2><br><br>
+
+        <mat-form-field appearance="none">
+            <mat-label>Username</mat-label>
+            <input matInput [(ngModel)]="username">
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="none">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <br>
+        <button class="login-btn waves-effect waves-light" name="login-btn" (click)="onLogin()">Sign In</button>
+        <br><br>
+        <p class="wrong-credentials" [hidden]="loginFailed">
+            <i class="material-icons">error</i> Incorrect Username/Password. Please try again.
+        </p>
+    </div>
+</div>

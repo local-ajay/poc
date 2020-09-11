@@ -1,0 +1,26 @@
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@import './assets/image/font-awesome/font-awesome-4.7.0/scss/font-awesome.scss';
+@include mat-core();
+$poc-primary: mat-palette($mat-blue);
+$poc-accent: mat-palette($mat-grey, A200, A100, A400);
+// The warn palette is optional (defaults to red).
+$poc-warn: mat-palette($mat-red);
+$poc-theme: mat-light-theme(( color: ( primary: $poc-primary, accent: $poc-accent, warn: $poc-warn, )));
+@include angular-material-theme($poc-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

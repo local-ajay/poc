@@ -1,0 +1,44 @@
+@import 'src/common-style';
+.btn-small {
+    background-color: $primary-blue;
+    color: $white;
+    height: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.template-link {
+    float: right;
+    font-size: 16px;
+}
+
+input {
+    border-style: ridge;
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+table {
+    @include std-table;
+    margin-top: 0;
+    border-style: none;
+    body {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.fix-action-row {
+    display: flex;
+    flex-direction: column;
+    vertical-align: bottom;
+}
+
+.file-path {
+    width: 50%;
+}
+
+.warning {
+    color: $error;
+}

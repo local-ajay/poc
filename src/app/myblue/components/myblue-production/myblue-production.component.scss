@@ -1,0 +1,17 @@
+@import 'src/common-style';
+.container {
+    @include std-container;
+}
+
+h4 {
+    font-weight: 500;
+    color: $primary-blue;
+}
+
+.btn-small {
+    @include std-btn;
+}
+
+table {
+    @include std-table;
+}

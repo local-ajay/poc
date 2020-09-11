@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAA;EACN,KAAK,EAAE,WAAW;EAClB,MAAM,EAAE,IAAI;CACf;;AAED,AAAA,EAAE,CAAA;EACE,WAAW,EAAE,GAAG;CACnB",
+    "sources": [
+        "myblue.component.scss"
+    ],
+    "names": [],
+    "file": "myblue.component.css"
+}

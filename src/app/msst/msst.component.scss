@@ -1,0 +1,23 @@
+@import 'src/common-style';
+.btn-small {
+    @include std-btn;
+}
+
+h2 {
+    font-weight: 500;
+    color: $primary-blue;
+}
+
+.container {
+    @include std-container;
+}
+
+.push {
+    min-height: 40vh;
+}
+
+app-footer {
+    height: 50px;
+    width: 100%;
+    left: 20%;
+}

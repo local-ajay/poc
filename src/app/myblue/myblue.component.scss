@@ -1,0 +1,32 @@
+@import 'src/common-style';
+.btn-small {
+    @include std-btn;
+}
+
+h2 {
+    font-weight: 500;
+    color: $primary-blue;
+}
+
+.container {
+    @include std-container;
+}
+
+mat-button-toggle {
+    width: 100px;
+}
+
+.push {
+    min-height: 40vh;
+}
+
+.footer-comp {
+    height: auto;
+    width: auto;
+}
+
+.body {
+    min-height: 100%;
+    margin-bottom: -50px;
+    height: 100%;
+}

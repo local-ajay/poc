@@ -1,0 +1,32 @@
+@import 'src/common-style';
+.container {
+    background-color: $white;
+    max-width: 90%;
+    mat-form-field {
+        width: 100%;
+    }
+    h2 {
+        font-size: 1.5rem;
+        color: darken($color: $primary-blue, $amount: 10%);
+    }
+}
+
+.login-btn {
+    @extend .btn-small;
+    background-color: linear-gradient(-180deg, rgb(24, 102, 163) 57%, rgb(18, 88, 147));
+    width: 100%;
+    height: 50px;
+}
+
+.wrong-credentials {
+    color: $error;
+    i {
+        bottom: 50px;
+    }
+}
+
+.outline {
+    .mat-form-field-underline {
+        display: none;
+    }
+}

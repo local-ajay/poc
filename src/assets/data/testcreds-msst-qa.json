@@ -1,0 +1,25 @@
+[{
+        "id": 1,
+        "username": "test",
+        "password": "msstqapass",
+        "field": "A"
+    },
+    {
+        "id": 3,
+        "username": "test2",
+        "password": "msstqapass2",
+        "field": "B"
+    },
+    {
+        "id": 3,
+        "username": "test3",
+        "password": "msstqapass3",
+        "field": "C"
+    },
+    {
+        "id": 4,
+        "username": "test4",
+        "password": "msstqapass4",
+        "field": "D"
+    }
+]

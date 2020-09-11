@@ -1,0 +1,46 @@
+<div class="template-link"><a href="javascript:;" (click)="downloadTemplate()">
+    Download Template
+</a>
+</div>
+<br><br>
+<mat-dialog-content class="mat-dialog-content">
+    <div>
+        <mat-divider></mat-divider>
+    </div>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Feature</th>
+                </tr>
+            </thead>
+        </table><br>
+        <p>
+            <span style="font-weight: 600;">Note: </span>
+            <span>Your Excel should have only these headers</span>
+        </p>
+        <br>
+        <input type="file" (change)="onImportChange($event)" id="fileInput">
+        <p class="warning" *ngIf="warning!=''">
+            <span style="font-weight: 600;">Warning: </span>
+            <span>{{warning}}</span>
+        </p>
+        <p class="warning" *ngIf="invalidValuePresent">
+            <span style="font-weight: 600;">Warning: </span>
+            <span>Invalid Values are present. These accounts will be excluded.</span>
+        </p>
+    </div>
+</mat-dialog-content>
+
+<div class="fix-action-row">
+    <mat-dialog-actions align="end" layout="row" layout-align="end center">
+        <button mat-flat-button mat-button-close (click)="onImportSubmit()" class="btn-small" *ngIf="sampleUserArr.length!=0">
+            Import
+        </button>
+        <button mat-flat-button mat-button-close (click)="onClose()" class="btn-small">
+            Cancel
+        </button>
+    </mat-dialog-actions>
+</div>
