@@ -1,4 +1,4 @@
-@import 'src/common-style';
+/* @import 'src/common-style';
 .container {
     @include std-container;
 }
@@ -14,4 +14,110 @@ h4 {
 
 table {
     @include std-table;
+    margin-left: 10%;
+    margin-right: auto;
+    max-width: 90%;
+    td,
+    th {
+        &.reduce-padding-serial-number {
+            padding: 5px;
+            width: 10% !important;
+            max-width: 10%;
+        }
+        &.reduce-padding-username {
+            padding: 0;
+            width: 20%;
+        }
+        &.reduce-padding-password {
+            padding: 0;
+            width: 10%;
+        }
+        &.reduce-padding-password-view {
+            padding: 1 !important;
+            width: 50px !important;
+            padding-right: 10px;
+            min-width: fit-content;
+        }
+        &.lastlogin {
+            padding-left: 30px;
+        }
+    }
 }
+
+td {
+    width: 5px;
+    padding-right: 5px;
+    max-width: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pagination-controls {
+    @include std-pagination;
+}
+
+select {
+    @include std-select;
+}
+
+.clear-field {
+    margin-left: 5px;
+    width: fit-content;
+    height: 32px;
+    background-color: $primary-blue;
+    color: $white;
+    border: outset $primary-blue;
+    text-align: start !important;
+    vertical-align: bottom;
+    mat-icon {
+        font-size: large;
+    }
+}
+
+.table-buttons {
+    height: 2.5rem;
+    @extend .btn-flat;
+    @extend .transparent;
+    padding: 0;
+    color: $black;
+    mat-icon {
+        font-size: large;
+    }
+}
+
+.search-form {
+    border-style: inset !important;
+    border-width: 1.5px !important;
+    border-radius: 5px !important;
+    max-height: 28px;
+    max-width: 63%;
+    vertical-align: bottom;
+    margin-bottom: 0 !important;
+}
+
+.search-form::placeholder {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.search-btn {
+    
+    margin-left: 5px;
+    width: 37px;
+    height: 32px;
+    background-color: $primary-blue;
+    color: $white;
+    border: outset $primary-blue;
+    text-align: start !important;
+    vertical-align: bottom;
+}
+
+.search-bar {
+    margin-left: 59%;
+    width: 30%;
+}
+
+textarea {
+    resize: vertical;
+    height: auto;
+} */

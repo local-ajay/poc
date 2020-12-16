@@ -5,7 +5,7 @@ import { MsstRoutingModule } from './msst-routing.module';
 import { MsstComponent } from './msst.component';
 import { MsstQAComponent } from './components/msst-qa/msst-qa.component';
 import { MsstStagingComponent } from './components/msst-staging/msst-staging.component';
-import { MsstProductionComponent } from './components/msst-production/msst-production.component';
+// import { MsstProductionComponent } from './components/msst-production/msst-production.component';
 
 import {MatButtonModule} from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -22,7 +22,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ShareFooterModule } from '../share-footer/share-footer.module'
 
 @NgModule({
-  declarations: [MsstComponent, MsstQAComponent, MsstStagingComponent, MsstProductionComponent],
+  declarations: [
+    MsstComponent,
+     MsstQAComponent,
+      MsstStagingComponent,
+      //  MsstProductionComponent
+      ],
   imports: [
     CommonModule,
     MsstRoutingModule,

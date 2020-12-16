@@ -14,36 +14,44 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class MsstStagingComponent implements OnInit {
 
-  hideSampleData=true;
-  importedCreds:SampleUser[]=[];
-  
   application:string="msst";
   environment:string="staging";
+  hideSampleData=true;
+  importedCreds:SampleUser[]=[];
+
+  
   sampleBtn:string="View Test Accounts";
 
   hidePwd:boolean[]=[];
-   /* Pagination Variables */
+
+  /* Pagination Variables */
   page:number=1;
   itemsPerPage:number=10;
 
+  /* Filter Variables */
   featureFilter:string;
   filteredList:SampleUser[];
   filter:string="";
 
+  
 
-  constructor(private dataio:DataExchangeService,private dialog:MatDialog,private _snackbar:MatSnackBar) { }
+  constructor(private dialog:MatDialog, private dataio:DataExchangeService,private _snackbar:MatSnackBar) {}
 
   ngOnInit(): void {
-    this.dataio.getData(this.application,this.environment).subscribe(response=>
-      this.onSuccessfullResponse(response))
+    this.dataio.getData(this.application,this.environment).subscribe(
+      response=>this.onSuccessfullResponse(response)
+    );
   }
+
   onClick(){
-    window.open("https://staging.member50.bluecrossma.com/login");
+    window.open("https://qa30.mybluweb30-devbcbsma.com/login");
   }
+  
   onClickSample(){
     this.hideSampleData=!this.hideSampleData;
     this.sampleBtn=this.hideSampleData?"View Test Accounts":"Hide Test Accounts";
   }
+
   onSuccessfullResponse(response){
     this.importedCreds=response;
     this.filteredList=this.importedCreds;
@@ -96,7 +104,7 @@ export class MsstStagingComponent implements OnInit {
   }
 
   copyToast(){
-    this._snackbar.open('Copied to Clipboard','Dismiss',
+    this._snackbar.open('Copied to Clipboard','dismiss',
       {
         duration:2000,
       }

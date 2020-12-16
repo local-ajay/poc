@@ -96,7 +96,7 @@ export class AddTestDataComponent implements OnInit {
           feature=feature.trim();
           // console.log(username+""+username.length+""+password.length);
             
-          if (password.length > 0 && password.length <=50 && username.length > 0 && username.length <=50&& feature.length <=50) {
+          if (password.length > 0 && password.length <=50 && username.length > 0 && username.length <=50){//&& feature.length <=50) {
             let su: SampleUser = new SampleUser(i, username, password, feature);
             this.sampleUserArr.push(su);
           }

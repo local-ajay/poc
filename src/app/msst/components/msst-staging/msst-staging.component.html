@@ -1,8 +1,8 @@
-<h4>Staging Environment</h4>
+<h4>UAT Environment</h4>
 
 <div class="row">
     <div class="col s6 m3">
-        <div class="btn-small" (click)="onClick()" matTooltip="Click here to open link in new tab">MyBlue QA Url</div>
+        <div class="btn-small" (click)="onClick()" matTooltip="Click here to open link in new tab">MSST UAT Url</div>
     </div>
     <div class="col s6 m3">
         <div class="btn-small waves-effect waves-light sample" (click)="onClickSample()">
@@ -37,15 +37,6 @@
         </p>
     </div>
 
-    <!-- <form name="form"> -->
-    <!-- <mat-form-field appearance="none" *ngIf="importedCreds.length!=0">
-                <mat-label>Search by Feature </mat-label>
-                <input matInput type="text" (change)="onFeatureFilter($event.target.value)" id="filter" name="filterName" #filterName>
-                <button (click)="onFeatureFilter('');filterName.value=''" class="clear-field" matTooltip="Clear">
-                        <mat-icon>clear</mat-icon>
-                    </button>
-            </mat-form-field> -->
-    <!-- </form> -->
     <div *ngIf="importedCreds.length!=0&&filteredList.length!=0">
         <table class="sampleTable" *ngIf="importedCreds.length!=0">
 
@@ -56,7 +47,8 @@
                     <th></th>
                     <th class="reduce-padding-password">Password</th>
                     <th class="table-buttons reduce-padding-password-view"></th>
-                    <th>Feature</th>
+                    <th>Features/Comments</th>
+                    <th class="lastlogin">Last Logged In</th>
                 </tr>
             </thead>
             <tbody>
@@ -83,7 +75,8 @@
                         <button [cdkCopyToClipboard]="password.value" class="table-buttons" matTooltip="Copy Password to Clipboard" (click)="copyToast()">
                             <i class="material-icons">content_copy</i>
                         </button></td>
-                    <td>{{user.feature}}</td>
+                    <td><textarea readonly rows="4">{{user.feature}}</textarea></td>
+                    <td class="lastlogin">12/05/2020 @ 12:15am</td>
                 </tr>
             </tbody>
         </table>

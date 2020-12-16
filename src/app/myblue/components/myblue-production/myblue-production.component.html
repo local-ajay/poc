@@ -1,8 +1,8 @@
-<h4>Production Environment</h4>
+<h4>Prod Environment</h4>
 
 <div class="row">
     <div class="col s6 m3">
-        <div class="btn-small" (click)="onClick()" matTooltip="Click here to open link in new tab">MyBlue Production Url</div>
+        <div class="btn-small" (click)="onClick()" matTooltip="Click here to open link in new tab">MyBlue Prod Url</div>
     </div>
     <div class="col s6 m3">
         <div class="btn-small waves-effect waves-light sample" (click)="onClickSample()">
@@ -11,7 +11,7 @@
                 {{sampleBtn}}
             </div>
             <ng-template #elseBlock>
-                <!-- <i class="material-icons right" style="position: relative;top: 2px;">remove</i>  -->
+                <!-- <i class="material-icons right" style="position: relative;top: 2px;">remove</i> -->
                 {{sampleBtn}}
             </ng-template>
         </div>
@@ -22,26 +22,80 @@
 </div>
 
 <div [hidden]="hideSampleData">
-    <table class="sampleTable" *ngIf="importedCreds.length!=0">
-        <thead>
-            <tr>
-                <th class="reduce-padding-serial-number">Sr No</th>
-                <th>Username</th>
-                <th>Feature</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let user of importedCreds">
-                <td class="reduce-padding-serial-number">{{user.srno}}</td>
-                <td>{{user.username}}</td>
-                <td>{{user.feature}}</td>
-            </tr>
-        </tbody>
-    </table>
-    <div *ngIf="importedCreds.length==0">
+    <div class="search-bar" *ngIf="importedCreds.length!=0">
+        <input type="text" class="search-form" (change)="onFeatureFilter($event.target.value)" id="filter" name="filterName" #filterName placeholder=" Search by feature...">
+
+        <button class="search-btn center">
+            <i class="material-icons">search</i>
+        </button>
+        <button (click)="onFeatureFilter('');filterName.value=''" class="clear-field">
+            Clear
+        </button>
+        <br>
+        <p style="font-style: italic;">
+            Showing entries {{filteredList.length}} / {{importedCreds.length}}
+        </p>
+    </div>
+
+    <div *ngIf="importedCreds.length!=0&&filteredList.length!=0">
+        <table class="sampleTable" *ngIf="importedCreds.length!=0">
+
+            <thead>
+                <tr>
+                    <th class="reduce-padding-serial-number">Sr No</th>
+                    <th class="reduce-padding-username">Username</th>
+                    <th></th>
+                    <th class="reduce-padding-password">Password</th>
+                    <th class="table-buttons reduce-padding-password-view"></th>
+                    <th>Features/Comments</th>
+                    <th class="lastlogin">Last Logged In</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of filteredList | paginate: { itemsPerPage: itemsPerPage, currentPage: page} ">
+                    <td class="reduce-padding-serial-number">{{user.srno}}</td>
+                    <td #username id="username" value="{{user.username}}" class="reduce-padding-username" matTooltip="{{user.username}}" [matTooltipShowDelay]="700" [matTooltipHideDelay]="400">
+
+                        {{user.username}}
+                    </td>
+                    <td>
+                        <button [cdkCopyToClipboard]="username.value" class="table-buttons" matTooltip="Copy Username to Clipboard" (click)="copyToast()">
+                            <i class="material-icons">content_copy</i>
+                        </button>
+                    </td>
+                    <td #password value="{{user.password}}" class="reduce-padding-password">
+                        <span [hidden]='hidePwd[user.srno]'>********</span>
+                        <span [hidden]='!hidePwd[user.srno]' matTooltip="{{user.password}}" [matTooltipShowDelay]="700" [matTooltipHideDelay]="400">{{user.password}}</span></td>
+                    <td>
+
+                        <button (click)="hidePwd[user.srno]=!hidePwd[user.srno]" class="table-buttons reduce-padding-password-view">
+                            <i class="material-icons">{{hidePwd[user.srno] ? 'visibility_off' : 'visibility'}}</i>
+                        </button>
+                        <span>&nbsp;&nbsp;</span>
+                        <button [cdkCopyToClipboard]="password.value" class="table-buttons" matTooltip="Copy Password to Clipboard" (click)="copyToast()">
+                            <i class="material-icons">content_copy</i>
+                        </button></td>
+                    <td><textarea readonly rows="4">{{user.feature}}</textarea></td>
+                    <td class="lastlogin">12/05/2020 @ 12:15am</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination-controls" *ngIf="importedCreds.length!=0">
+            <pagination-controls (pageChange)="page=$event" autoHide="true"></pagination-controls>
+        </div>
+    </div>
+    <div *ngIf="importedCreds.length!=0&&filteredList.length==0" class="search-bar">
+        <br>
+        <p>
+            <span>No account containing "{{this.filter}}" in feature available.</span>
+            <!-- <br>
+            <span style="font-weight: 700;">Note: </span><span>Search term is case-sensitive</span> -->
+        </p>
+    </div>
+    <div *ngIf="importedCreds.length==0 ">
         <h6>
             No test accounts are available.
-            <a href="javascript:;" (click)="openDialog()"> 
+            <a href="javascript:; " (click)="openDialog() ">
                 Click here to add the test accounts.
             </a>
         </h6>

@@ -34,9 +34,12 @@ table {
         }
         &.reduce-padding-password-view {
             padding: 1 !important;
-            width: 5px !important;
-            max-width: 5px;
-            background-color: yellowgreen;
+            width: 50px !important;
+            padding-right: 10px;
+            min-width: fit-content;
+        }
+        &.lastlogin {
+            padding-left: 30px;
         }
         // span {
         //     overflow: hidden;
@@ -124,5 +127,11 @@ select {
 }
 
 .search-bar {
-    margin-left: 72%;
+    margin-left: 59%;
+    width: 30%;
+}
+
+textarea {
+    resize: vertical;
+    height: auto;
 }
