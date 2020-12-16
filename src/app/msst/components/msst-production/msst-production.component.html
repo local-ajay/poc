@@ -46,54 +46,54 @@
                     <th class="reduce-padding-password">Password</th>
                     <th class="table-buttons reduce-padding-password-view"></th>
                     <th>Features/Comments</th>
-                    <th class="lastlogin">Last Logged In</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let user of filteredList | paginate: { itemsPerPage: itemsPerPage, currentPage: page} ">
-                    <td class="reduce-padding-serial-number">{{user.srno}}</td>
-                    <td #username id="username" value="{{user.username}}" class="reduce-padding-username" matTooltip="{{user.username}}" [matTooltipShowDelay]="700" [matTooltipHideDelay]="400">
+                    <!-- <th class="lastlogin">Last Logged In</th> -->
+</tr>
+</thead>
+<tbody>
+    <tr *ngFor="let user of filteredList | paginate: { itemsPerPage: itemsPerPage, currentPage: page} ">
+        <td class="reduce-padding-serial-number">{{user.srno}}</td>
+        <td #username id="username" value="{{user.username}}" class="reduce-padding-username" matTooltip="{{user.username}}" [matTooltipShowDelay]="700" [matTooltipHideDelay]="400">
 
-                        {{user.username}}
-                    </td>
-                    <td>
-                        <button [cdkCopyToClipboard]="username.value" class="table-buttons" matTooltip="Copy Username to Clipboard" (click)="copyToast()">
+            {{user.username}}
+        </td>
+        <td>
+            <button [cdkCopyToClipboard]="username.value" class="table-buttons" matTooltip="Copy Username to Clipboard" (click)="copyToast()">
                             <i class="material-icons">content_copy</i>
                         </button>
-                    </td>
-                    <td #password value="{{user.password}}" class="reduce-padding-password">
-                        <span [hidden]='hidePwd[user.srno]'>********</span>
-                        <span [hidden]='!hidePwd[user.srno]' matTooltip="{{user.password}}" [matTooltipShowDelay]="700" [matTooltipHideDelay]="400">{{user.password}}</span></td>
-                    <td>
+        </td>
+        <td #password value="{{user.password}}" class="reduce-padding-password">
+            <span [hidden]='hidePwd[user.srno]'>********</span>
+            <span [hidden]='!hidePwd[user.srno]' matTooltip="{{user.password}}" [matTooltipShowDelay]="700" [matTooltipHideDelay]="400">{{user.password}}</span></td>
+        <td>
 
-                        <button (click)="hidePwd[user.srno]=!hidePwd[user.srno]" class="table-buttons reduce-padding-password-view">
+            <button (click)="hidePwd[user.srno]=!hidePwd[user.srno]" class="table-buttons reduce-padding-password-view">
                             <i class="material-icons">{{hidePwd[user.srno] ? 'visibility_off' : 'visibility'}}</i>
                         </button>
-                        <span>&nbsp;&nbsp;</span>
-                        <button [cdkCopyToClipboard]="password.value" class="table-buttons" matTooltip="Copy Password to Clipboard" (click)="copyToast()">
+            <span>&nbsp;&nbsp;</span>
+            <button [cdkCopyToClipboard]="password.value" class="table-buttons" matTooltip="Copy Password to Clipboard" (click)="copyToast()">
                             <i class="material-icons">content_copy</i>
                         </button></td>
-                    <td><textarea readonly rows="4">{{user.feature}}</textarea></td>
-                    <td class="lastlogin">12/05/2020 @ 12:15am</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="pagination-controls" *ngIf="importedCreds.length!=0">
-            <pagination-controls (pageChange)="page=$event" autoHide="true"></pagination-controls>
-        </div>
-    </div>
-    <div *ngIf="importedCreds.length!=0&&filteredList.length==0" class="search-bar">
-        <br>
-        <p>
-            <span>No account containing "{{this.filter}}" in feature available.</span>
-        </p>
-    </div>
-    <div *ngIf="importedCreds.length==0 ">
-        <h6>
-            No test accounts are available.
-            <a href="javascript:; " (click)="openDialog() ">
+        <td><textarea readonly rows="4">{{user.feature}}</textarea></td>
+        <!-- <td class="lastlogin">12/05/2020 @ 12:15am</td> -->
+    </tr>
+</tbody>
+</table>
+<div class="pagination-controls" *ngIf="importedCreds.length!=0">
+    <pagination-controls (pageChange)="page=$event" autoHide="true"></pagination-controls>
+</div>
+</div>
+<div *ngIf="importedCreds.length!=0&&filteredList.length==0" class="search-bar">
+    <br>
+    <p>
+        <span>No account containing "{{this.filter}}" in feature available.</span>
+    </p>
+</div>
+<div *ngIf="importedCreds.length==0 ">
+    <h6>
+        No test accounts are available.
+        <a href="javascript:; " (click)="openDialog() ">
                 Click here to add the test accounts.
             </a>
-        </h6>
-    </div>
+    </h6>
+</div>
 </div> -->
